@@ -1,24 +1,54 @@
 document.querySelector("form").addEventListener("submit", formSubmit);
-    var userStack = JSON.parse(localStorage.getItem("userDataBase"))||[];
+//    let userStack = JSON.parse(localStorage.getItem("userDataBase"))||[];
 
-        function formSubmit(event){
-            event.preventDefault();
-            var name = document.getElementById("namerth").value;
-            var surName = document.getElementById("lastrth").value;
-            var mobile = document.getElementById("numbrth").value;
-            var email = document.getElementById("mailrth").value;
-            var pass = document.getElementById("passwordrth").value;
+        async function formSubmit(event){
 
-            var userData = { 
-                name : name,
+            try{
+                event.preventDefault();
+            let name = document.getElementById("namerth").value;
+           let surName = document.getElementById("lastrth").value;
+           let mobile = document.getElementById("numbrth").value;
+           let uemail = document.getElementById("mailrth").value;
+           let pass = document.getElementById("passwordrth").value;
+
+           let userData = { 
+                firstName : name,
                 lastName:surName,
-                emailAdd : email,
-                mblNum: mobile,
-                passwd: pass,
+                mobileNo: mobile,
+                email: uemail,
+                password: pass,
             };
 
-            userStack.push(userData);
-            localStorage.setItem("userDataBase", JSON.stringify(userStack));
-            alert("Signup Success");
-            window.location.href = "login.html";
+            const newUser= JSON.stringify(userData)
+
+                const res = await fetch("https://cw4tanishq.herokuapp.com/register",{
+                    method:"POST",
+                    body:newUser,
+                    headers:{
+                        "Content-Type":"application/json"
+                    }
+
+                })
+
+                const result = await res.json();
+
+                if(res.status==400){
+                    console.log("email already exists")
+                }
+                if(res.status==200){
+                    alert("registration Successful")
+                    window.location.href= "login.html"
+                }
+
+            }
+            
+            catch(err){
+                console.log(err)
+            }
+
         }
+        //     userStack.push(userData);
+        //     localStorage.setItem("userDataBase", JSON.stringify(userStack));
+        //     alert("Signup Success");
+        //     window.location.href = "login.html";
+        // }

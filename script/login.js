@@ -43,6 +43,7 @@ const newUser= JSON.stringify(userData)
         localStorage.setItem("name", name)
         alert("Login Successful")
         window.location.href= "Home.html"
+        localStorage.setItem("token",result.token)
 
     }
 

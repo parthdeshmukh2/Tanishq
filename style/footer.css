@@ -1,0 +1,199 @@
+
+
+.underline-1{
+    transition: all 1s ease 0s;
+}
+*{
+    font-family: 'Playfair Display';
+    margin: 0;
+    padding: 0;
+
+}
+.know-more{
+    color: white;
+}
+
+
+
+.sub-heading-ayush{
+    font-family: Open Sans;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 0px auto 0px auto;
+    padding: 3px;
+}
+
+.main-container-row-for-real-reviews-from-real-customers{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.three-main-columns-box{
+    /* border: 2px solid red; */
+    height: auto;
+    margin: 25px;
+    width: 450px;
+    padding-right: 10px;
+    
+}
+
+.sub-column{
+    margin: 2px;
+    /* border: 2px solid green; */
+    width: auto;
+    height: 8rem;
+
+    /* border: 2px solid rgb(0, 243, 93); */
+}
+
+.sub-left-column{
+    width: 120px;
+}
+
+
+
+
+.card-img-top{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.05s ease 0s;
+}
+
+.card-img-top:hover{
+    filter:hue-rotate(-240deg);
+   
+    
+}
+
+.card-body{
+    padding: 0;
+}
+
+.card-text{
+    font-size: 9px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.checked {
+    color: orange;
+  }
+
+
+
+.bold-ay{
+    font-weight: bold;
+  }
+
+.italic-ay{
+    font-style: italic;
+}
+
+.sm-text-ay{
+    color: grey;
+    font-size: 13px;
+}
+
+.float-right{
+    float: right;
+    margin-right: 30px;
+    color: gray;
+}
+
+.three-text-main-container{
+    background-color: #f2f0e8;
+    box-sizing: border-box;
+}
+
+.sub-three-text-main-box{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 200px;
+    /* width: 100px; */
+    box-sizing: border-box;
+}
+
+.three-equal-col{
+    height: 180px;
+    /* border: 2px solid red; */
+    margin: 10px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* transition: all 0.5s ease 0s;*/
+
+.new-trans{
+    transition: all 0.1s ease 0s;
+}
+
+.new-trans:hover{
+    transform: scale(1.1);
+    transform: translateY(-8px)
+
+}
+
+.remove-bullets{
+    list-style: none;
+    line-height: 35px;
+    position: relative;
+    right: 25px;
+}
+
+.or-around-space{
+    margin: 40px;
+}
+
+
+.know-more{
+    background-color:#b0a16e;
+    position: relative;
+    top: -17px;
+    padding-top: 20px;
+    
+}
+
+.know-more-center{
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+/* Rotate */
+.rotate-zoom{
+	-webkit-transform: rotate(15deg) scale(1.4);
+	transform: rotate(15deg) scale(1.4);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rotate-zoom:hover{
+	-webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
+}
+
+.last-icon{
+    word-spacing:50px;
+        margin-left:9%;
+    
+}
+
+
+
+

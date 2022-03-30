@@ -1,90 +1,199 @@
-#amarfooter{
-    width: 100%;
-    background-color: rgb(176,161,110);
-    color: white;
-    font-family: sans-serif;
+
+
+.underline-1{
+    transition: all 1s ease 0s;
 }
 *{
+    font-family: 'Playfair Display';
     margin: 0;
     padding: 0;
+
+}
+.know-more{
+    color: white;
+}
+
+
+
+.sub-heading-ayush{
+    font-family: Open Sans;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 0px auto 0px auto;
+    padding: 3px;
+}
+
+.main-container-row-for-real-reviews-from-real-customers{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.three-main-columns-box{
+    /* border: 2px solid red; */
+    height: auto;
+    margin: 25px;
+    width: 450px;
+    padding-right: 10px;
     
 }
-#amarfooter>p{
-    margin-left: 48%;
-}
-.fa-angle-double-down{
-    margin-left: 51%;
-}
-#amarjewelstore{
-    display: flex;
-    width: 90%;
-    justify-content: space-around;
-    margin: 100px 100px 0px 100px;
-    margin-top: 30px;
-}
-#amarjewelstore>div{
-    width: 500px;
-    color: black;
-}
-#amarjewelstore>div>h1{
-    margin-bottom: 10px;
-}
-#amarstoreplace{
-    width: 1300x;
-    margin: 5%;
-    font: 20px
-}
-.amarstoreplace>div:nth-child(2){
-    font-size: 14px;
-    color: black;
-}
-.amarstoreplace>div:nth-child(1){
-    font-size: 20px;
-    color: black;
-    margin-bottom: 10px;
-    width: 98%;
-    border-bottom: 1px solid black;
-}
-.amarstoreplace{
-        width: 80%;
-        justify-content: space-around;
-        margin: 100px 100px 0px 190px;
-        margin-top: 30px;
+
+.sub-column{
+    margin: 2px;
+    /* border: 2px solid green; */
+    width: auto;
+    height: 8rem;
+
+    /* border: 2px solid rgb(0, 243, 93); */
 }
 
-#doworkamar{
-    display: none;
+.sub-left-column{
+    width: 120px;
 }
 
-#amarcustomer{
-    width: 96%;
-    margin: 4%;
-    height: 500px;
-    display: flex;
-    justify-content: space-around;
+
+
+
+.card-img-top{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.05s ease 0s;
 }
-#amarhelp{
-    margin-top: 100px;
-    font-size: 20px;
+
+.card-img-top:hover{
+    filter:hue-rotate(-240deg);
+   
+    
 }
-#amarhelp>div:nth-child(1){
-    margin-bottom: 25px;
-    font-size: 25px;
+
+.card-body{
+    padding: 0;
 }
-#amarhelp>div{
-    margin-bottom: 15px;
+
+.card-text{
+    font-size: 9px;
+    text-align: center;
+    font-weight: bold;
+    
 }
-#amarsubscribe{
-    height: 50px;
-    display: flex;
+
+.checked {
+    color: orange;
+  }
+
+
+
+.bold-ay{
+    font-weight: bold;
+  }
+
+.italic-ay{
+    font-style: italic;
 }
-#amarsubscribe>input{
-    height:50px;
-}
-#amarsubscribe>p{
-    height: 50px;
-    background-color:white;
+
+.sm-text-ay{
     color: grey;
-    margin-top: 3px
+    font-size: 13px;
+}
+
+.float-right{
+    float: right;
+    margin-right: 30px;
+    color: gray;
+}
+
+.three-text-main-container{
+    background-color: #f2f0e8;
+    box-sizing: border-box;
+}
+
+.sub-three-text-main-box{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 200px;
+    /* width: 100px; */
+    box-sizing: border-box;
+}
+
+.three-equal-col{
+    height: 180px;
+    /* border: 2px solid red; */
+    margin: 10px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* transition: all 0.5s ease 0s;*/
+
+.new-trans{
+    transition: all 0.1s ease 0s;
+}
+
+.new-trans:hover{
+    transform: scale(1.1);
+    transform: translateY(-8px)
 
 }
+
+.remove-bullets{
+    list-style: none;
+    line-height: 35px;
+    position: relative;
+    right: 25px;
+}
+
+.or-around-space{
+    margin: 40px;
+}
+
+
+.know-more{
+    background-color:#b0a16e;
+    position: relative;
+    top: -17px;
+    padding-top: 20px;
+    
+}
+
+.know-more-center{
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+/* Rotate */
+.rotate-zoom{
+	-webkit-transform: rotate(15deg) scale(1.4);
+	transform: rotate(15deg) scale(1.4);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rotate-zoom:hover{
+	-webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
+}
+
+.last-icon{
+    word-spacing:50px;
+        margin-left:9%;
+    
+}
+
+
+
+

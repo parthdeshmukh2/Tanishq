@@ -30,7 +30,6 @@
         #rightrth{
             width:49.8%;
             height:90%;
-            border-left:1px solid black;
             margin-top:20px;
             display: flex;
             flex-wrap: wrap;
@@ -161,4 +160,27 @@
         display: flex;
         font-family: inherit;
         font-weight: bold; 
+     }
+
+     @media only screen and (min-width:0px) and (max-width:480px){
+        #contentrth{
+            width:90%;
+            height:75%;
+            display: block;
+            flex-wrap: wrap;
+            margin:auto;
+        }
+        #rightrth{
+            width:49.8%;
+            height:90%;
+            margin-top:250px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #leftrth{
+            width:49.8%;
+            height:90%;
+            border-right:0px solid black;
+            margin-top:20px;
+        }
      }

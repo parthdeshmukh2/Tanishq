@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanishq Jewellery Clone</title>
+ <link rel="stylesheet" href="../style/home.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    
+    <section class="fullheader">
+      <div class="header">
+        <div class="h-up">
+          <div class="h-up-left">
+            <button>BRANDS</button>
+            <button>CURRENCY SELECTOR <i class="fa fa-angle-down"></i></button>
+            <button>GOLD RATE <i class="fa fa-angle-down"></i></button>
+          </div>
+          <div class="h-up-right">
+            
+            <button>ENCIRCLE</button>
+            <button>GOLDEN HARVEST</button>
+            <button>BOOK AN APPOINTMENT</button>
+            <button>WHISLIST</button>
+            <button onclick="document.location='./cart.html'">CART</button>
+            <button onclick="document.location='../index.html'">logout</button>
+          </div>
+        </div>
+        <hr id="h-hr" />
+        <div class="h-down">
+          <div class="logo">
+            <img src="img/logo.png" alt="" />
+          </div>
+          <div class="h-down-btn">
+            <div class="another">
+            <button class="dropbtn">All Jewellery</button>
+  <div class="dropdown-content">
+  <div>
+    <h3>GENDER</h3>
+    <a href="/pages/men.html">MEN</a>
+    <a href="/pages/women.html">WOMEN</a>
+    <a href="#">KIDS</a>
+  </div>
+  <div >
+    <h3>CATEGORY</h3>
+    <a style="margin-left: 20px;" href="/pages/men_gold.html">MEN GOLD</a>
+    <a style="margin-left: 20px;" href="/pages/women_gold.html">WOMEN GOLD</a>
+    <a style="margin-left: 20px;" href="/pages/men_diamond.html">MEN DIAMOND</a>
+    <a style="margin-left: 20px;" href="/pages/women_diamond.html">WOMEN DIAMOND</a>
+    <a style="margin-left: 20px;" href="/pages/men_whitegold.html">MEN WHITE GOLD</a>
+    <a style="margin-left: 20px;" href="/pages/women_whitegold.html">WOMEN WHITE GOLD</a>
+    
+  </div>
+  <div>
+    <h3>PRICE BAND</h3>
+    <a href="#">LESS THAN 5K</a>
+    <a href="#">5K-10K</a>
+    <a href="#">10K-20K</a>
+    <a href="#">20K-30K</a>
+    <a href="#">30K-40K</a>
+    <a href="#">40K-50K</a>
+    
+  </div>
+  </div>
+  
+    
+  </div>
+            <button>GOLD</button>
+            <button>DIAMOND</button>
+            <button>ENGAGEMENT RING</button>
+            <button>COLLECTIONS</button>
+            <button>RIVAAH</button>
+            <button>INSIDE TANISHQ</button>
+            <button>MIA</button>
+          </div>
+          <div class="h-down-icon">
+            <i class="fa fa-map-marker"></i>
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+      </div>
+      <div class="containe" style="margin: 0;padding: 0;width: 100%;" >
+         
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;">
+          
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+        
+          <div class="carousel-inner" style="width: 100%;">
+            <div class="item active">
+              <img style="width: 100%;" src="/img/body.webp" alt=""  >
+            </div>
+      
+            <div class="item ">
+              <img style="width: 100%;" src="/img/Polki_2500x950.webp" alt="">
+            </div>
+          
+            <div class="item ">
+              <img style="width: 100%;" src="/img/2500X950-copy-min.webp" alt="" >
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    <div>
+      <h1 style="text-align: center;padding-top: 6%;">Shop by Category</h1>
+      <div class="scrollmenu">
+        <a href="#"><img src="/img/category (1).webp" alt=""></a>
+        <a href="#"><img src="/img/category (2).webp" alt=""></a>
+        <a href="#"><img src="/img/category (3).webp" alt=""></a>
+        <a href="#"><img src="/img/category (4).webp" alt=""></a>
+        <a href="#"><img src="/img/category (5).webp" alt=""></a>
+        <a href="#"><img src="/img/category (6).webp" alt=""></a>
+        <a href="#"><img src="/img/Category+circle+Bangles+160+x+160px.webp" alt=""></a>
+        <a href="#"><img src="/img/Category+circle+Bracelets+160+x+160px.webp" alt=""></a>
+        <a href="#"><img src="/img/Category+circle+Chain+160+x+160px.webp" alt=""></a>
+        <a href="#"><img src="/img/Category+circle+Neckwear+Set+160+x+160px.webp" alt=""></a>
+        <a href="#"><img src="/img/Category+circle+nose+pin+160+x+160px.webp" alt=""></a>
+        <a href="#"><img src="/img/Category+circle+pendant+set+160+x+160px.webp" alt=""></a>
+        
+      
+        
+    </div>
+    </div>
+    <div style="padding-bottom: 1%;"><video width="100%" autoplay muted loop>
+      <source src="/img/Sangeet-1278-no-button.mp4" type="video/mp4">
+    </video></div>
+
+
+    
+    <div id="deepak">
+      <div class="glance-text-exclusive glow" style="padding-bottom: 1%;">
+        <h1>New For You!</h1>
+      </div>
+      <div class="slider-images">
+        <a href="#"
+          ><img src="img/exclusive-1.webp" alt="Dare to Dazzle Jewellery"
+        /></a>
+        <a href="#"
+          ><img src="img/exclusive-2.webp" alt="Dare to Dazzle Jewellery"
+        /></a>
+        <a href="#"
+          ><img src="img/exclusive-3.webp" alt="Dare to Dazzle Jewellery"
+        /></a>
+      </div>
+
+      <div class="shop-by-gender glow">
+        <h1>Shop By Gender</h1>
+      </div>
+      <div class="gender-cate">
+       
+        <div class="gender">
+          <a href="/pages/men.html"><img src="img/mens.webp" alt="" /></a>
+          <h3>MEN</h3>
+        </div>
+        <div class="gender">
+          <a href="/pages/women.html"><img src="img/womens.webp" alt="" /></a>
+          <h3>WOMEN</h3>
+        </div>
+        <div class="gender">
+          <a href="#"><img src="img/kids.webp" alt="" /></a>
+          <h3>KIDS</h3>
+        </div>
+      
+      </div>
+
+      <div class="arboard">
+        <div class="arboard1"> <a href=""
+          ><img src="img/Artboard5.webp" alt="Dare to Dazzle Jewellery"
+        /></a>
+      </div>
+        <div class="arboard2">
+          <a href=""
+          ><img src="img/Artboard1.webp" alt="Dare to Dazzle Jewellery"
+        /></a>
+        <a href=""
+        ><img src="img/Artboard2.webp" alt="Dare to Dazzle Jewellery"
+      /></a>
+      <a href=""
+      ><img src="img/Artboard3.webp" alt="Dare to Dazzle Jewellery"
+    /></a>
+    <a href=""
+    ><img src="img/Artboard4.webp" alt="Dare to Dazzle Jewellery"
+  /></a>
+        </div>
+      </div>
+
+      <div class="trending-prod glow">
+        <h1>Top sellers</h1>
+      </div>
+      <div class="traditional-products">
+        <div class="products">
+          <a href="#"
+            ><img src="img/a1.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Opulent Floral Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 21046</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a2.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a3.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a4.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a5.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a6.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a7.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a8.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a9.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a10.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a11.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a12.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a13.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a14.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Slender Traditional Gold</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 51086</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a15.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>22 Karat Gold Mangal Sutra</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 111046</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a17.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>22 Karat Gold Mangal Sutra</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 111046</h6></a>
+          </div>
+        </div>
+        <div class="products">
+          <a href="#"
+            ><img src="img/a16.webp" alt=""
+          /></a>
+          <div class="prod-name">
+            <a href="#"> <p>Mangal Sutra Gold Chain</p></a>
+          </div>
+          <div class="prod-pricing">
+            <a href="#"> <h6>Rs. 118395</h6></a>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="rivaah">
+  <img src="/img/IMG_1024.jpg" alt="">
+</div>
+
+  <div class="glance-text-exclusive glow" style="padding-bottom: 1%;padding-top:1%;">
+    <h1>Connect with us</h1>
+  </div>
+  <div class="slider-images">
+    <a href="#"
+      ><img src="img/JanConnectOnWhatsapp360x360.webp" alt="Dare to Dazzle Jewellery"
+    /></a>
+    <a href="#"
+      ><img src="img/JanBookAnAppointment360x360.webp" alt="Dare to Dazzle Jewellery"
+    /></a>
+    <a href="#"
+      ><img src="img/JanScheduleaVideoCall360x360.webp" alt="Dare to Dazzle Jewellery"
+    /></a>
+  </div>
+
+    <div class="daretodazzlePromises">
+      <h1 class="ptext-center">Tanishq Promises</h1>
+    </div>
+    <div class="promises-p">
+      <img src="img/promise_1.png" alt="hack_a_wifi" class="promiPic" />
+      <img src="img/promise_2.png" alt="hack_a_wifi" class="promiPic" />
+      <img src="img/promise_3.png" alt="hack_a_wifi" class="promiPic" />
+    </div>
+    <div class="glance-text-exclusive glow" style="padding-bottom: 2%;padding-top:7%;">
+      <h4 style="text-align: center;">Buying Jewellery on Tanishq Got Easier</h4>
+    </div>
+    <div class="slider-images">
+      <a href="#"
+        ><img src="img/FindYourRingSize360x360.webp" alt="Dare to Dazzle Jewellery"
+      /></a>
+      <a href="#"
+        ><img src="img/HeartfeltTestimonials360x360.webp" alt="Dare to Dazzle Jewellery"
+      /></a>
+      <a href="#"
+        ><img src="img/TheJewelleryCareGuide360x360.webp" alt="Dare to Dazzle Jewellery"
+      /></a>
+    </div>
+    
+    <div class="ayu-code-is-here font-ay" style="justify-content: space-evenly;">
+      <hr style="margin-bottom: 0px;" />
+      <p class="sub-heading-ayu neon">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Customers reviews
+      </p>
+      <hr style="margin-top: 0px;" />
+
+      <div class="row main-container-row-for-real-reviews-from-real-customers">
+        <div class="col three-main-columns-box" >
+          <div class="row">
+            <div class="sub-left-column sub-column">
+              <div class="row">
+                <div class="card" style="width: 7rem;" >
+                  <img
+                    src="img/square(4).jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <p class="card-text" style="width: 7rem;">
+                    CLASSIC DELICATE GOLD CHAIN IN 18 KARAT YELLOW GOLD
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col sub-right-column sub-column text-glow-2"
+            style="padding-top: 12%;">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+
+              <span>03/31/21</span>
+
+              <br />
+              <span class="bold-ay"> Nice to have the product... </span>
+              <br />
+              <span class="italic-ay"> Nice to have the product... </span>
+              <br />
+              <span class="sm-text-ay">by Ayush Kumar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col three-main-columns-box">
+          <div class="row">
+            <div class="sub-left-column sub-column">
+              <div class="row">
+                <div class="card" style="width: 7rem;">
+                  <img
+                    src="img/square(5).jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <p class="card-text" style="width: 7rem;">
+                    10 GM 24 KARAT GOLD COIN WITH LAKSHMI MOTIF
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col sub-right-column sub-column text-glow-2" style="padding-top: 12%;">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+
+              <span>03/31/21</span>
+
+              <br />
+              <span class="bold-ay"> Perfect but costly with respect </span>
+              <br />
+              <span class="italic-ay">
+                Perfect but costly with respect to others
+              </span>
+              <br />
+              <span class="sm-text-ay">Prabhat s.</span>
+            </div>
+          </div>
+        </div>
+        <div class="col three-main-columns-box">
+          <div class="row">
+            <div class="sub-left-column sub-column">
+              <div class="row">
+                <div class="card" style="width: 7rem;">
+                  <img
+                    src="img/square(6).jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <p class="card-text" style="width: 7rem;">
+                    CONTEMPORARY DIAMOND RING IN YELLOW AND WHITE GOLD
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col sub-right-column sub-column text-glow-2" style="padding-top: 12%;">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+
+              <span>03/31/21</span>
+
+              <br />
+              <span class="bold-ay"> Value for money. </span>
+              <br />
+              <span class="italic-ay">
+                Product as well as delivery is great.
+              </span>
+              <br />
+              <span class="sm-text-ay">by RAJBANSHI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <p class="yotpo-logo-title yotpo-powered float-right">
+            Powered by
+            <i class="fa fa-paypal" aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
+
+      <!-- UPPER PART OF FIND A STORE NEAR YOU -->
+
+      <div class="three-text-main-container">
+        <div class="row sub-three-text-main-box">
+          <div class="col-3 three-equal-col">
+            <span class="bold-ay">100% ORIGINAL</span>
+            <br />
+            <br />
+            <h5>
+              All products are original and go through strict quality check.
+            </h5>
+          </div>
+
+          <div class="col-3 three-equal-col">
+            <span class="bold-ay">A TATA PRODUCT</span>
+            <br />
+            <br />
+            <h5>The Tata seal of Trust comes with all our products.</h5>
+          </div>
+
+          <div class="col-3 three-equal-col">
+            <span class="bold-ay">SHIPPING</span>
+            <br />
+            <br />
+            <h5>
+              Shipping in India is free. Shipping charges applicable for
+              International.
+            </h5>
+          </div>
+        </div>
+
+
+      <!-- KNOW MORE SECTION -->
+
+      <section class="know-more">
+        <p class="know-more-center bold-ay-2">KNOW MORE</p>
+        <br />
+        <div class="row center-center" style="justify-content: space-evenly;">
+          <div class="col-3" >
+            <span class="bold-ay-2 neon-3">Customer Services</span><br /><br />
+
+            <ul class="remove-bullets">
+              <li class="csr-pointer neon-2">HELP & CONTACT</li>
+              <li class="csr-pointer neon-2">DELIVERY INFORMATION</li>
+              <li class="csr-pointer neon-2">INTERNATIONAL SHIPPING</li>
+              <li class="csr-pointer neon-2">RETURNS</li>
+              <li class="csr-pointer neon-2">PAYMENT OPTION</li>
+              <li class="csr-pointer neon-2">TRACK ORDER</li>
+              <li class="csr-pointer neon-2">ENCIRCLE PROGRAM</li>
+              <li class="csr-pointer neon-2">OFFER & CONTEST DETAILS</li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <span class="bold-ay-2 neon-3">About Tanishq</span><br />
+            <br />
+
+            <ul class="remove-bullets">
+              <li class="csr-pointer neon-2">CAREERS</li>
+              <li class="csr-pointer neon-2">FIND A STORE</li>
+              <li class="csr-pointer neon-2">Feedback</li>
+              <li class="csr-pointer neon-2">Trust & Promise</li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <span class="bold-ay-2 neon-3"
+              >Sign Up to Receive <br />
+              Exclusive Offers and News</span
+            >
+            <br /><br />
+            <input type="text" placeholder="Enter Your Email" name="search" />
+            <button type="button" class="btn-sm btn-outline-primary">
+              Subscribe
+            </button>
+
+            <br /><br />
+
+            <span>
+              Follow us on &nbsp;&nbsp;&nbsp;&nbsp;
+              <i
+                class="fa fa-facebook-official fa-2x"
+                aria-hidden="true"
+              ></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-twitter fa-2x " aria-hidden="true"></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-instagram fa-2x " aria-hidden="true"></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              
+            </span>
+
+            <br /><br />
+
+            <span>DOWNLOAD OUR TANISHQ APP</span>
+            <br /><br />
+            <span>
+              <img style="width: 100px;height: 40px;"
+                src="img/google-play-store.png"
+                alt=""
+                width="35%"
+                class="csr-pointer new-trans effect-shine"
+              />
+              <img
+                src="img/iOs (1).png"
+                alt=""
+                class="csr-pointer new-trans effect-shine"
+              />
+            </span>
+
+            <br /><br />
+            <hr />
+
+            <span>
+              Terms & Condition. &nbsp;&nbsp;|&nbsp;&nbsp; Privacy Policy
+            </span>
+            <br />
+            <span>
+              &copy; 2021 LNCTS SPEED CODERS.
+              <br />
+              All Rights Reserved.
+            </span>
+          </div>
+
+          <div class="last-icon">
+            <br /><br /><br />
+            <span class="last-icon">
+              <i
+                class="fa fa-cc-visa fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-cc-mastercard fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-cc-paypal fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-inr fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-university fa-3x csr-pointer space-around new-trans"
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-telegram fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-dropbox fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-cc-amex fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+              <i
+                class="fa fa-credit-card-alt fa-3x csr-pointer space-around new-trans "
+                aria-hidden="true"
+              ></i>
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="text"><p>How can i help you? x</p></div>
+    <img class="popup" onclick="openForm()" src="/img/rsoresized.png" alt="">
+  
+  
+  
+  <div class="chat-popup" id="myForm">
+    
+    <form action="/action_page.php" class="form-container">
+      <div class="popheader"> <h3>Welcome to Tanishq</h3> </div>
+  
+  <div class="rdiobtn">
+    <div class="rdiobtn1" >
+    <div class="radiobtn" >
+    <p>Welcome to Tanishq! Please fill in <br> the form below before starting the <br>chat.</p>
+    <p>Name:*</p> 
+    <input type="text">
+    <p>Mobile:*</p>
+    <input type="text" name="" id="">
+    <p>E-mail:</p>
+    <input type="text">
+    <p>Would you like to receive <br> communication from us on <br>Whatsapp?</p>
+  
+    <input style="width: 20px;" type="radio">Yes</input>
+  
+    <input style="width: 20px;" type="radio">No</input>
+    <button type="button" class="btn">Start the chat</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </div>
+  </div>
+  </div>
+  
+    </form>
+  
+  </div>
+  </body>
+  <script>
+   
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+    </script>
+</html>

@@ -38,9 +38,10 @@ const newUser= JSON.stringify(userData)
     }
     if(res.status==201){
         console.log(result)
-
+        const _id = result.user._id
         const name = result.user.firstName
         localStorage.setItem("name", name)
+        localStorage.setItem("_id", _id)
         alert("Login Successful")
         window.location.href= "Home.html"
         localStorage.setItem("token",result.token)

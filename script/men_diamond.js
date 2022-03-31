@@ -30,6 +30,19 @@ function handlePriceSort() {
   displayData(mensDataDiamond);
 }
 
+//api fetch 
+//  const url = "https://cw4tanishq.herokuapp.com/products?type=Diamond&category=Men"
+
+// const asyncFunction = ()=>{
+//   try {
+//     let response = await fetch("url");
+//     console.log(response);
+//   } catch (error) {
+//     console.log(error.message)
+//   }
+
+// }
+
 // displayData(mensDataDiamond)
 
 function displayData(mensDataDiamond) {
@@ -98,6 +111,9 @@ function addtocart(data) {
 
   alert("added successfully");
 }
+
+
+
 
 var total_cart = localStorage.getItem("cartLen");
 if (total_cart > 0) {

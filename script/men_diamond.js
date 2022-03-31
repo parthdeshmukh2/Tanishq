@@ -43,6 +43,22 @@
 
 // }
 
+// function handlePriceSort() {
+//   var selected = document.querySelector("#priceSort").value;
+//   console.log(selected);
+//   if (selected == "high") {
+//     mensDataDiamond.sort(function (a, b) {
+//       return b.price - a.price;
+//     });
+//   }
+//   if (selected == "low") {
+//     mensDataDiamond.sort(function (a, b) {
+//       return a.price - b.price;
+//     });
+//   }
+
+//   displayData(mensDataDiamond);
+// }
 // displayData(mensDataDiamond)
 
 // function displayData(mensDataDiamond) {
@@ -137,18 +153,17 @@ async function myfunction() {
     // return data
     console.log(res);
     console.log(data);
-    appendmd(data)
+    appendmd(data);
   } catch (error) {
     console.log("error:", error);
   }
 }
 myfunction();
 
-
 function appendmd(data) {
   document.querySelector("#containermen").innerHTML = "";
 
-  data.map( function (item) {
+  data.map(function (item) {
     var div = document.createElement("div");
 
     var img = document.createElement("img");
@@ -186,34 +201,34 @@ function appendmd(data) {
     btn.setAttribute("id", "bagmen");
     btn.textContent = "MOVE TO BAG";
 
-btn.addEventListener("click", function () {
-  if (!localStorage.getItem("name")) {
-    alert("Please Login to continue");
-    return;
-  }
-  addtocart(data);
-});
+    btn.addEventListener("click", function () {
+      var _id = JSON.parse(localStorage.getItem(_id)) || [];
+
+      async function addtocart() {
+        try {
+          var cartData = {
+            userId: "6242f849a22b9fa4e210ca09",
+            cartItem: item,
+          };
+          const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+            method: "POST",
+            body: JSON.stringify(cartData),
+            headers: {
+              "Content-Type": "application/json",
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImNhcnQiOltdLCJfaWQiOiI2MjQyZjg0OWEyMmI5ZmE0ZTIxMGNhMDkiLCJmaXJzdE5hbWUiOiJTaHViaGFtIiwibGFzdE5hbWUiOiJEdWJleSIsIm1vYmlsZU5vIjo5ODM5ODM5MTExLCJlbWFpbCI6InNodWJoYW1AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkLmoueXVFc3pnZE4yOEJGMm1uRHY0T1VKa1dCV1BpcjlZUUhJYm1SREJyZmR1U3VWRERiZGEiLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTI5VDEyOjE1OjA1Ljc0N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTI5VDEyOjE1OjA1Ljc0N1oiLCJfX3YiOjB9LCJpYXQiOjE2NDg3MzU2MTh9.TPlV-o_uRsBwaTERV2_lxtX6b8lL3bG2eSzrx3_un5M",
+            },
+          });
+          // const result = await res.json();
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      addtocart();
+    });
 
     div.append(img, divr, brand, name, div2, btn);
 
     document.querySelector("#containermen").append(div);
   });
 }
-
-
-// function handlePriceSort() {
-//   var selected = document.querySelector("#priceSort").value;
-//   console.log(selected);
-//   if (selected == "high") {
-//     mensDataDiamond.sort(function (a, b) {
-//       return b.price - a.price;
-//     });
-//   }
-//   if (selected == "low") {
-//     mensDataDiamond.sort(function (a, b) {
-//       return a.price - b.price;
-//     });
-//   }
-
-//   displayData(mensDataDiamond);
-// }

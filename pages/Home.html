@@ -38,7 +38,7 @@
             <button>GOLDEN HARVEST</button>
             <button>BOOK AN APPOINTMENT</button>
             <button>WHISLIST</button>
-            <button >CART(0)</button>
+            <button onclick="document.location='./cart.html'">CART</button>
             <button onclick="document.location='../index.html'">logout</button>
           </div>
         </div>
@@ -749,10 +749,49 @@
         </div>
       </section>
     </div>
+    <div class="text"><p>How can i help you? x</p></div>
+    <img class="popup" onclick="openForm()" src="/img/rsoresized.png" alt="">
+  
+  
+  
+  <div class="chat-popup" id="myForm">
+    
+    <form action="/action_page.php" class="form-container">
+      <div class="popheader"> <h3>Welcome to Tanishq</h3> </div>
+  
+  <div class="rdiobtn">
+    <div class="rdiobtn1" >
+    <div class="radiobtn" >
+    <p>Welcome to Tanishq! Please fill in <br> the form below before starting the <br>chat.</p>
+    <p>Name:*</p> 
+    <input type="text">
+    <p>Mobile:*</p>
+    <input type="text" name="" id="">
+    <p>E-mail:</p>
+    <input type="text">
+    <p>Would you like to receive <br> communication from us on <br>Whatsapp?</p>
+  
+    <input style="width: 20px;" type="radio">Yes</input>
+  
+    <input style="width: 20px;" type="radio">No</input>
+    <button type="button" class="btn">Start the chat</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </div>
+  </div>
+  </div>
+  
+    </form>
+  
+  </div>
   </body>
   <script>
-    function myFunction() {
-      alert("please login first");
-    }
+   
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
     </script>
 </html>

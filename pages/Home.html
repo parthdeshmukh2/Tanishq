@@ -33,13 +33,18 @@
             <button>GOLD RATE <i class="fa fa-angle-down"></i></button>
           </div>
           <div class="h-up-right">
-            
+            <span id="username"><b> Name </b></span>
             <button>ENCIRCLE</button>
             <button>GOLDEN HARVEST</button>
             <button>BOOK AN APPOINTMENT</button>
             <button>WHISLIST</button>
+<<<<<<< HEAD
             <button id="sunny" onclick="document.location='./cart.html'">CART</button>
             <button onclick="document.location='../index.html'">logout</button>
+=======
+            <button onclick="document.location='./cart.html'">CART</button>
+            <button onclick="logout()">Logout</button>
+>>>>>>> c273cb4140fcb243696beedc6ee13809ee4ef14e
           </div>
         </div>
         <hr id="h-hr" />
@@ -792,6 +797,18 @@
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+function logout(){
+  localStorage.removeItem("name");
+  localStorage.removeItem("_id");
+  localStorage.removeItem("token");
+  window.location.href='../index.html'
+}
+
+var username = localStorage.getItem("name")
+
+if(username===undefined) document.getElementById("username").style.display="none"
+else document.getElementById("username").innerHTML=`<b>${username}</b>`
 
     </script>
 </html>

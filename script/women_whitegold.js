@@ -185,7 +185,8 @@
 //   });
 // }
 
-let url = "https://cw4tanishq.herokuapp.com/product?type=white Gold&category=Women";
+let url =
+  "https://cw4tanishq.herokuapp.com/product?type=white Gold&category=Women";
 async function myfunction(url) {
   try {
     let res = await fetch(url);
@@ -242,11 +243,36 @@ function appendmd(data) {
     btn.textContent = "MOVE TO BAG";
 
     btn.addEventListener("click", function () {
+      var _id = localStorage.getItem("_id");
+      var token = localStorage.getItem("token");
+      async function addtocart() {
+        try {
+          var cartData = {
+            userId: _id,
+            cartItem: item,
+          };
+          const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+            method: "POST",
+            body: JSON.stringify(cartData),
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          // const result = await res.json();
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      addtocart();
+    });
+
+    btn.addEventListener("click", function () {
       if (!localStorage.getItem("name")) {
         alert("Please Login to continue");
         return;
       }
-      addtocart(data);
+      addtocart();
     });
 
     div.append(img, divr, brand, name, div2, btn);
@@ -255,4 +281,9 @@ function appendmd(data) {
   });
 }
 
+var username = localStorage.getItem("name");
 
+if (username === null)
+  document.getElementById("username").innerHTML =
+    "<a style='color:Black;text-decoration:none;'href='./login.html'>Login</a>";
+else document.getElementById("username").innerHTML = `<b>${username}`;

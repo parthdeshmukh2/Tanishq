@@ -202,12 +202,12 @@ function appendmd(data) {
     btn.textContent = "MOVE TO BAG";
 
     btn.addEventListener("click", function () {
-      var _id = JSON.parse(localStorage.getItem(_id)) || [];
-
+      var _id = localStorage.getItem("_id");
+      var token = localStorage.getItem("token");
       async function addtocart() {
         try {
           var cartData = {
-            userId: "6242f849a22b9fa4e210ca09",
+            userId: _id,
             cartItem: item,
           };
           const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
@@ -215,8 +215,7 @@ function appendmd(data) {
             body: JSON.stringify(cartData),
             headers: {
               "Content-Type": "application/json",
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImNhcnQiOltdLCJfaWQiOiI2MjQyZjg0OWEyMmI5ZmE0ZTIxMGNhMDkiLCJmaXJzdE5hbWUiOiJTaHViaGFtIiwibGFzdE5hbWUiOiJEdWJleSIsIm1vYmlsZU5vIjo5ODM5ODM5MTExLCJlbWFpbCI6InNodWJoYW1AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkLmoueXVFc3pnZE4yOEJGMm1uRHY0T1VKa1dCV1BpcjlZUUhJYm1SREJyZmR1U3VWRERiZGEiLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTI5VDEyOjE1OjA1Ljc0N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTI5VDEyOjE1OjA1Ljc0N1oiLCJfX3YiOjB9LCJpYXQiOjE2NDg3MzU2MTh9.TPlV-o_uRsBwaTERV2_lxtX6b8lL3bG2eSzrx3_un5M",
+              Authorization: `Bearer ${token}`,
             },
           });
           // const result = await res.json();

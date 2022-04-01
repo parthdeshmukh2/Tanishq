@@ -178,6 +178,7 @@ btn.addEventListener("click", function () {
   if (!localStorage.getItem("name")) {
     alert("Please Login to continue");
     return;
+    
   }
   addtocart(data);
 });

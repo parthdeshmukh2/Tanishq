@@ -3,9 +3,27 @@ let totalD = document.querySelector(".totl");
 let totalItm = document.querySelector(".titm");
 let upy = document.querySelector(".upy");
 let finalDiscount = document.querySelector(".fdisc");
-// import {footer} from "../script/footer.js"
-// let footerDiv = document.getElementById("footer");
-// footerDiv.innerHTML = footer()
+let btn = document.getElementById("sunny");
+// let id = localStorage.getItem(_id);
+// let token =  localStorage.getItem(token);
+
+// btn.addEventListener("click", function () {
+//   async function atc(){
+//   try {
+//     const res = await fetch(`"https://cw4tanishq.herokuapp.com/cart/${id}"`,{
+//       method:"GET",
+//       headers:{
+//         Authorization: `"Bearer ${token}"`
+
+//       }
+//     }) 
+    
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// atc();
+// });
 
 let mdiv = document.getElementById("cart-mid");
 cartDisplay(cartData, mdiv);
@@ -211,8 +229,8 @@ if (total_cart > 0) {
   document.getElementById("amartocart").innerHTML = `CART(${total_cart})`;
 }
 
-var usrname = JSON.parse(localStorage.getItem("name"))||[];
-document.getElementById("amarname").textContent = `${usrname}`;
+// var usrname = JSON.parse(localStorage.getItem("name"))||[];
+// document.getElementById("amarname").textContent = `${usrname}`;
 
 var userdelet = document.getElementById("gotologin");
 

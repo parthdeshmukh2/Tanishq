@@ -40,22 +40,51 @@ function append(data){
 }
 append()
 
-let url2 = "https://cw4tanishq.herokuapp.com/cart";
+// let url2 = "https://cw4tanishq.herokuapp.com/cart";
    
-async function myfunction2() {
-  try {
-    let res = await fetch(url);
-    let data2 = await res.json();
-    // return data
+// async function myfunction2() {
+//   try {
+//     let res = await fetch(url);
+//     let data2 = await res.json();
+//     // return data
     
-    console.log(data2);
-    append(data2);
+//     console.log(data2);
+//     console.log(res)
 
+//   } catch (error) {
+//     console.log("error:", error);
+//   }
+// }
+// myfunction2()
+
+// {_id: "6247b6c10287b756eeb81e33", userID: "6246d6813c39f629ab0fe1d8",…}
+// cart: [{_id: "62434374cbc0dd7571254c30", id: 35,…}, {_id: "62434374cbc0dd7571254c32", id: 37,…},…]
+// userID: "6246d6813c39f629ab0fe1d8"
+// __v: 13
+// _id: "6247b6c10287b756eeb81e33"
+let userId = req.parms._id
+let cart = cart.id
+async function tocart() {
+  try {
+    if (!localStorage.getItem("token")) {
+      alert("Please Login to continue");
+      return;
+    } else {
+      const token = (localStorage.getItem("token"));
+      const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+        method: "PUT",
+        body: [],
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      // const result = await res.json();
+    }
   } catch (error) {
-    console.log("error:", error);
+    console.log(error);
   }
 }
-myfunction2()
 
 
   //  function checking_out(){

@@ -1,108 +1,157 @@
   let userName = JSON.parse(localStorage.getItem("logInUserdata"));
 
-    let div_username=document.querySelector(".checkout_username>p")
-    div_username.innerHTML='<i class="fa-regular fa-circle-check fa-2x"></i>'+`SIGNED IN AS ${userName[0].name}`;
- 
+   
+let url = "https://cw4tanishq.herokuapp.com/user";
+async function myfunction() {
+  try {
+    let res = await fetch(url);
+    let data = await res.json();
+    // return data
+    
+    console.log(data);
+    append(data);
 
-    let firstName=document.getElementById("checkout_firstName");
-    firstName.value=userName[0].name;
+  } catch (error) {
+    console.log("error:", error);
+  }
+}
+myfunction()
 
-    let lastName = document.getElementById("checkout_lastName")
-    lastName.value=userName[0].lastName;
+let tokenCheck =(localStorage.getItem("_id"));
+console.log(tokenCheck)
 
+let checkout_username = document.querySelector(".checkout_username")
+let firstName=document.getElementById("checkout_firstName")
+    let lastname = document.getElementById("checkout_lastName")
     let email=document.getElementById("checkout_email")
-    email.value=userName[0].emailAdd;
-
     let phone =document.getElementById("checkout_phone")
-    phone.value=userName[0].mblNum;
+function append(data){
+  
+    data.map(function (ele){
+      if(ele._id == tokenCheck){
+        checkout_username.textContent=1+" "+ele.firstName;
+        firstName.value = ele.firstName;
+        lastname.value = ele.lastName;
+        phone.value = ele.mobileNo;
+        email.value = ele.email;
+      }
+    })
+  
+}
+append()
+
+let url2 = "https://cw4tanishq.herokuapp.com/cart";
+   
+async function myfunction2() {
+  try {
+    let res = await fetch(url);
+    let data2 = await res.json();
+    // return data
+    
+    console.log(data2);
+    append(data2);
+
+  } catch (error) {
+    console.log("error:", error);
+  }
+}
+myfunction2()
 
 
+  //  function checking_out(){
+  //   let firstName=document.getElementById("checkout_firstName").value;
+  //   let lastname = document.getElementById("checkout_lastName").value;
+  //   let email=document.getElementById("checkout_email").value;
+  //   let phone =document.getElementById("checkout_phone").value;
 
-   function checking_out(){
-    let firstName=document.getElementById("checkout_firstName").value;
-    let lastname = document.getElementById("checkout_lastName").value;
-    let email=document.getElementById("checkout_email").value;
-    let phone =document.getElementById("checkout_phone").value;
+     
 
-        let zipcode=document.getElementById("zipcode").value;
-        let state=document.getElementById("stateDel").value;
-        let city=document.getElementById("cityDel").value;
-        let addressDe=document.getElementById("addressDel").value;
-        let phone1 = document.getElementById("phoneDel").value;
-        let country=document.getElementById("checkout_country").option;
-        let address=document.getElementById("added_address")
+  //       let checkoutObj={
+  //           name:firstName,
+  //           lastname:lastName,
+  //           mail:email,
+  //           mobile:phone,
+  //           addr:address,
+  //           ste:state,
+  //           place:city,
+  //           conty:country,
+  //       }
 
-        let checkoutObj={
-            name:firstName,
-            lastname:lastName,
-            mail:email,
-            mobile:phone,
-            addr:addressDe,
-            ste:state,
-            place:city,
-            conty:country,
-        }
-
-          if(country,zipcode,state,city,addressDe,phone1){
+    //       if(firstName,lastName,email,phone,country,zipcode,state,city,addressDe,phone1){
 
 
-            let nameP=document.createElement("p");
-            nameP.textContent=firstName+" ";
-            let mailId=document.createElement("p");
-            mailId.textContent=email;
-            let mobNum=document.createElement("p");
-            mobNum.textContent=phone;
-            let addre=document.createElement("p");
-            addre.textContent=city+" "+state+" "+zipcode;
-            // let couty=document.createElement("p");
-            // couty.textContent=country.value;
+    //         let nameP=document.createElement("p");
+    //         nameP.textContent=firstName+" ";
+    //         let mailId=document.createElement("p");
+    //         mailId.textContent=email;
+    //         let mobNum=document.createElement("p");
+    //         mobNum.textContent=phone;
+    //         let addre=document.createElement("p");
+    //         addre.textContent=city+" "+state+" "+zipcode;
+    //         // let couty=document.createElement("p");
+    //         // couty.textContent=country.value;
 
-            let cart_items = document.getElementById("added_items");
+    //         let cart_items = document.getElementById("added_items");
 
 
-            let data = JSON.parse(localStorage.getItem("CartItems"))
+    //         let data = JSON.parse(localStorage.getItem("CartItems"))
 
-            data.map((ele)=>{
-                let div = document.createElement("div");
-                let image = document.createElement("img");
-                image.src=ele.image_link;
-                let amount= document.createElement("h5")
-                amount=`Rs.`+ele.price;
-                // getTotal(ele.price);
-                let pro_name= document.createElement("h3");
-                pro_name.textContent=ele.name;
-                let type = document.createElement("p");
-                type.textContent=ele.type;
-                div.append(image,pro_name,type,amount)
-                cart_items.append(div);
-            });
-         let total =0;
-         for(var i=0; i<data.length; i++){
-             total+=data[i].price;
-             if(total==0){
-                 total="No items add";
-             }
-         }
+    //         data.map((ele)=>{
+    //             let div = document.createElement("div");
+    //             let image = document.createElement("img");
+    //             image.src=ele.image_link;
+    //             let amount= document.createElement("h5")
+    //             amount=`Rs.`+ele.price;
+    //             // getTotal(ele.price);
+    //             let pro_name= document.createElement("h3");
+    //             pro_name.textContent=ele.name;
+    //             let type = document.createElement("p");
+    //             type.textContent=ele.type;
+    //             div.append(image,pro_name,type,amount)
+    //             cart_items.append(div);
+    //         });
+    //      let total =0;
+    //      for(var i=0; i<data.length; i++){
+    //          total+=data[i].price;
+    //          if(total==0){
+    //              total="No items add";
+    //          }
+    //      }
         
-        let amount = document.createElement("h4");
-        amount.textContent="Rs."+total;
-        let addHead = document.createElement("h2");
-        addHead.textContent="DELIVERY ADDRESS:";
+    //     let amount = document.createElement("h4");
+    //     amount.textContent="Rs."+total;
+    //     let addHead = document.createElement("h2");
+    //     addHead.textContent="DELIVERY ADDRESS:";
 
             
-            let address_div = document.getElementById("added_address");
-            address_div.append(amount,addHead,nameP,mailId,mobNum,addre)
+    //         let address_div = document.getElementById("added_address");
+    //         address_div.append(amount,addHead,nameP,mailId,mobNum,addre)
 
-            document.getElementById('order_review').checked = true;
-            localStorage.setItem("checkout_details",JSON.stringify(checkoutObj))
-            document.getElementById('checkout_details').checked = false;
+    //         document.getElementById('order_review').checked = true;
+    //         localStorage.setItem("checkout_details",JSON.stringify(checkoutObj))
+    //         document.getElementById('checkout_details').checked = false;
            
-          }
-          else{
-              alert("enter all the required details");
-          }   
-    }
+    //       }
+    //       else{
+    //           alert("enter all the required details");
+    //       }   
+    // }
+    // document.getElementById('order_review').checked = false;
 
+
+
+    let zip=document.getElementById("zipcode").value;
+    let state=document.getElementById("stateDel").value;
+    let city=document.getElementById("cityDel").value;
+    let addressDe=document.getElementById("addressDel").value;
+    let phone1 = document.getElementById("phoneDel").value;
+    let country=document.getElementById("checkout_country").option;
+    let address=document.getElementById("added_address")
+   function check_out(){
+   
+      document.getElementById('order_review').checked = true;
+      document.getElementById('checkout_details').checked = false;
+   }
 
   function continue_payment(){
     document.getElementById('checkbox_payment').checked = true;

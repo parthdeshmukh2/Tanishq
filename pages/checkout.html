@@ -11,7 +11,7 @@
 <body>
     <div id="checkout_nav">
         <div>
-           <a href="">
+           <a href="./Home.html">
            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/cb53f671-01d0-449e-b18d-a4e61e6ffa0b/TanishqLogo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-cb53f671-01d0-449e-b18d-a4e61e6ffa0b-mC036IT" alt=""> 
             </a>
         </div>
@@ -24,15 +24,15 @@
         <p>PLACE YOUR ORDER IN 4 EASY STEPS</p>
     </div>
     
-    
+    <div class="checkout_username">
+            <p></p>
+    </div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid rgb(201, 197, 197); "></div>
     <div class="checkout_payment">
-        <input id="checkout_details" type="checkbox">
-        <label  for="checkout_details">
-            <div class="checkout_username">
-                <p> </p>
-            </div>
        
-        <i class="fa-solid fa-2"></i>DELIVERY INFORMATION</label>
+        <input id="checkout_details" type="checkbox">
+        <label  for="checkout_details">2
+            DELIVERY INFORMATION</label>
         <div class="payment_form">
            <p>In order to deliver your order, we need to gather some information from you. Please fill the form below.</p>
            <p style="font-size: 30px; font-family: 'Times New Roman', Times, serif; ">YOUR PERSONAL DETAILS</p>
@@ -98,17 +98,18 @@
                         <input id="phoneDel" type="number">              
                     </div>
                 <div style="margin: 50px 0px;">
-                <button onclick="checking_out()" style="font-size:small; margin-left:0px; padding:10px 20px; border: none; background-color: black; color:white;">CONTINUE TO REVIEW ORDER</button>
+                <button onclick="check_out()" style="font-size:small; margin-left:0px; padding:10px 20px; border: none; background-color: black; color:white;">CONTINUE TO REVIEW ORDER</button>
                 </div>
             </div>
            </div>
-           
         </div>
-        <div class="checkout_payment1" style="padding: 23px;">
+        <div style="margin-top:10px;width:110%;margin-left: -300px;margin-bottom: 20px; border-bottom: 1px solid rgb(201, 197, 197); "></div>
+
+        <div class="checkout_payment1" style="border-bottom: 20px ;" >
             <input type="checkbox" id="order_review">
-            <label  for="order_review">
+            <label  for="order_review">3 
            
-                <i class="fa-solid fa-3"></i>ORDER REVIEW</label>
+               ORDER REVIEW</label>
                 <div class="order__review">
                     <p> Please review your order to ensure your details are correct.</p>
                     <p>If you have reviewed your order, you can proceed to the next stage and make the payment.</p>
@@ -124,11 +125,12 @@
                 </div>
         </div>
     </div>
-    
-    <div class="checkout_payment2">
+    <div style="margin-top:10px;margin-bottom: 20px; border-bottom: 1px solid rgb(201, 197, 197); "></div>
+
+    <div class="checkout_payment2" style="margin-top:20px;">
         <input type="checkbox" id="checkbox_payment">
-        <label  for="checkbox_payment">
-            <i class="fa-solid fa-4"></i>PAYMENT INFORMATION</label>
+        <label  for="checkbox_payment">4
+            PAYMENT INFORMATION</label>
             <div class="checkbox__payment">
                  <p>
                     In order to process your order, we need to gather your payment details.

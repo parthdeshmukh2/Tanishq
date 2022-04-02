@@ -226,8 +226,23 @@ function appendmd(data) {
       addtocart();
     });
 
+    btn.addEventListener("click", function () {
+      if (!localStorage.getItem("name")) {
+        alert("Please Login to continue");
+        return;
+      }
+      addtocart();
+    });
+
     div.append(img, divr, brand, name, div2, btn);
 
     document.querySelector("#containermen").append(div);
   });
 }
+
+var username = localStorage.getItem("name");
+
+if (username === null)
+  document.getElementById("username").innerHTML =
+    "<a style='color:Black;text-decoration:none;'href='./login.html'>Login</a>";
+else document.getElementById("username").innerHTML = `<b>${username}`;

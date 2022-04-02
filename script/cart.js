@@ -1,20 +1,20 @@
-let cartData = JSON.parse(localStorage.getItem("CartItems")) || [];
+let cartData = JSON.parse(localStorage.getItem("cartItm")) || [];
+
 let totalD = document.querySelector(".totl");
+
 let totalItm = document.querySelector(".titm");
+
 let upy = document.querySelector(".upy");
+
 let finalDiscount = document.querySelector(".fdisc");
-// import {footer} from "../script/footer.js"
-// let footerDiv = document.getElementById("footer");
-// footerDiv.innerHTML = footer()
 
 let mdiv = document.getElementById("cart-mid");
+
 cartDisplay(cartData, mdiv);
-// displayTotal()
 
 function cartDisplay(data, target) {
   displayTotal();
-  data.map((e) => {
-    // mdiv.innerHTML = "";
+  data[0].cart.map((e) => {
     mdiv.innerHTML += `
 
     <div class="oneEl">
@@ -25,19 +25,27 @@ function cartDisplay(data, target) {
               <div class="onedec">
                 <h2>${e.name}</h2>
                 <p>500064SWAAGA092JA005975</p>
-                <p class="price">${e.price}<span style="text-decoration: line-through;color: gray;font-size: 20px;">₹9999</span></p>
+                <p class="price">${
+                  e.price
+                }<span style="text-decoration: line-through;color: gray;font-size: 20px;">₹9999</span></p>
               </div>
             </div>
           </div>
           <div class="mid-right">
               <div class="flexC">
                 <div class="qnty">
-                <button class="minus" onclick="changeUnit('minus',${e.id})">-</button>
-                <div class="number">${e.units}</div>
-                  <button class="plus" onclick="changeUnit('plus',${e.id})">+</button>
+                <button class="minus" onclick="changeUnit('minus',${
+                  e.id
+                })">-</button>
+                <div class="number">${1}</div>
+                  <button class="plus" onclick="changeUnit('plus',${
+                    e.id
+                  })">+</button>
                 </div>
                 <div class="rbtn">
-                    <button onclick = "removeCartItm(${e.id})" class="remove">Remove</button>
+                    <button onclick = "removeCartItm(${
+                      e.id
+                    })" class="remove">Remove</button>
                  </div>
               </div>
               <div class="price-con">
@@ -80,35 +88,36 @@ function cartDisplay(data, target) {
         
         `;
 
-    // console.log(e);
     itmQty();
   });
 }
 
 function itmQty() {
+
   let qty = document.querySelector(".itmQty");
 
-  qty.innerHTML = `CART: ${cartData.length} ITEM(s)`;
-  localStorage.setItem("cartLen",cartData.length)
-}
-// function updQty() {
-//   let qty = document.querySelector(".itmQty");
+  qty.innerHTML = `CART: ${cartData[0].cart.length} ITEM(s)`;
 
-//   qty.innerHTML = `CART: ${newCartP.length} ITEM(s)`;
-// }
+  localStorage.setItem("cartLen", cartData.length);
+}
 
 function removeCartItm(id) {
   let ndiv = document.querySelector("#cart-mid");
-  cartData = cartData.filter((itm) => itm.id != id);
-  //  localStorage.setItem('newCart' JSON.stringify(cartData));
-  localStorage.setItem("CartItems", JSON.stringify(cartData));
-  console.log(cartData);
-  updateCart(cartData, ndiv);
+
+  cartData[0].cart = cartData[0].cart.filter((itm) => itm.id != id);
+
+  let test = cartData[0].cart;
+
+  localStorage.setItem("CartItems", JSON.stringify(test));
+
+  let newCart = JSON.parse(localStorage.getItem("CartItems") || []);
+
+  updateCart(newCart, ndiv);
+
   finalDiscount.innerHTML = `DISCOUNT<span class="disc">₹${0}</span> `;
-  //  let neww = JSON.parse(localStorage.getItem('newCart'))||[];
-  //  updateCart(neww,ndiv);
 
   itmQty();
+
   displayTotal();
 }
 
@@ -124,19 +133,27 @@ function updateCart(data, target) {
               <div class="onedec">
                 <h2>${e.name}</h2>
                 <p>500064SWAAGA092JA005975</p>
-                <p class="price">${e.price}<span style="text-decoration: line-through;color: gray;font-size: 20px;">₹9999</span></p>
+                <p class="price">${
+                  e.price
+                }<span style="text-decoration: line-through;color: gray;font-size: 20px;">₹9999</span></p>
               </div>
             </div>
           </div>
           <div class="mid-right">
               <div class="flexC">
                 <div class="qnty">
-                <button class="minus" onclick="changeUnit('minus',${e.id})">-</button>
-                <div class="number">${e.units}</div>
-                  <button class="plus" onclick="changeUnit('plus',${e.id})">+</button>
+                <button class="minus" onclick="changeUnit('minus',${
+                  e.id
+                })">-</button>
+                <div class="number">${1}</div>
+                  <button class="plus" onclick="changeUnit('plus',${
+                    e.id
+                  })">+</button>
                 </div>
                 <div class="rbtn">
-                    <button onclick = "removeCartItm(${e.id})" class="remove">Remove</button>
+                    <button onclick = "removeCartItm(${
+                      e.id
+                    })" class="remove">Remove</button>
                  </div>
               </div>
               <div class="price-con">
@@ -181,10 +198,10 @@ function displayTotal() {
   let total = 0;
   let totlI = 0;
 
-  cartData.forEach((e) => {
+  cartData[0].cart.forEach((e) => {
     total += e.price;
   });
-  totlI = cartData.length;
+  totlI = cartData[0].cart.length;
   // totalD.innerHTML = total;
   totalItm.innerHTML = `ORDER TOTAL (${totlI} ITEMS) <span class="totl">₹${total}</span> `;
   upy.innerHTML = `YOU PAY <span class="upay">${total}</span>`;
@@ -195,8 +212,8 @@ function displayTotal() {
     displayTotal();
     let inpVal = document.getElementById("promo").value;
     if (inpVal == "masai30" || inpVal == "Masai30") {
-      let discountTotal = total * 0.3;
-      let newTotal = total - discountTotal;
+      let discountTotal = Math.ceil(total * 0.3);
+      let newTotal = Math.ceil(total - discountTotal);
       totalItm.innerHTML = `ORDER TOTAL (${totlI} ITEMS) <span class="totl">₹${newTotal}</span> `;
       upy.innerHTML = `YOU PAY <span class="upay">${newTotal}</span>`;
       finalDiscount.innerHTML = `DISCOUNT<span class="disc">₹${discountTotal}</span> `;
@@ -211,8 +228,8 @@ if (total_cart > 0) {
   document.getElementById("amartocart").innerHTML = `CART(${total_cart})`;
 }
 
-var usrname = JSON.parse(localStorage.getItem("name"))||[];
-document.getElementById("amarname").textContent = `${usrname}`;
+// var usrname = JSON.parse(localStorage.getItem("name"))||[];
+// document.getElementById("amarname").textContent = `${usrname}`;
 
 var userdelet = document.getElementById("gotologin");
 
@@ -220,7 +237,4 @@ userdelet.addEventListener("click", function () {
   console.log(userdelet);
   localStorage.removeItem("logInUserdata");
   localStorage.removeItem("name");
-  
 });
-
-

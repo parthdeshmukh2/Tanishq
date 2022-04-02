@@ -172,6 +172,7 @@ function appendmd(data) {
     btn.setAttribute("id", "bagmen");
     btn.textContent = "MOVE TO BAG";
 
+
     btn.addEventListener("click", function () {
       var _id = localStorage.getItem("_id");
       var token = localStorage.getItem("token");
@@ -204,7 +205,6 @@ function appendmd(data) {
       }
       addtocart();
     });
-
     div.append(img, divr, brand, name, div2, btn);
 
     document.querySelector("#containermen").append(div);

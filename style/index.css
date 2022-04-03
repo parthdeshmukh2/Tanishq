@@ -394,7 +394,7 @@ div > h1 , div > h3{
     justify-content: center;
     margin: auto;
     height: 200px;
-    /* width: 100px; */
+    
     box-sizing: border-box;
 }
 
@@ -657,6 +657,8 @@ div > h1 , div > h3{
     }
    
  
+
+
     .header{display: none; justify-content: center; overflow-y:scroll ; z-index: 2; background-color: #b0a16e;}
     .h-up{display: none; justify-content: center;}
     .h-down{display: none; justify-content: center;}
@@ -715,6 +717,12 @@ div > h1 , div > h3{
  .text{
      bottom: 20%;
  }
+ .three-text-main-container{
+    display: none;
+}
+#feedback{
+    display: block;
+}
     #toggle:checked + .header,.h-up,.h-down{
         display: block;
         padding: 0;

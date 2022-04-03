@@ -41,7 +41,6 @@
     margin-left: 1.8rem;
     cursor: pointer;
     font-family: 'Inconsolata', monospace;
-    font-size: 14px;
     font-weight: bold;
 }
 
@@ -119,7 +118,6 @@
     z-index: 1;
   width: 100%;
   left: 0;
-  margin-top:1.5%;;
   border-top: 1px solid rgb(202, 201, 201);
   justify-content: space-evenly;
 
@@ -163,7 +161,7 @@ div > h1 , div > h3{
 
 }
 .carousel-inner {
-margin-top:11%;
+margin-top:140px;
 }
 
 .category{
@@ -173,22 +171,13 @@ margin-top:11%;
     padding-bottom: 5%;
 }
 .arboard{
-    display:flex;
+    width: 100%;
+    margin-bottom: 50px;
 }
-.arboard1{
-    width: 70%;
+.arboard img{
+    width: 100%;
 }
-.arboard1 img{
-    width: 700px;
-    height: 400px;
-    margin-left: 20px;
-}
-.arboard2 img{
-    margin-left: 10px;
-    width: 240px;
-    height: 195px;
-    margin-bottom: 10px;
-}
+
 .slider-images , .gender-cate  {
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +198,7 @@ margin-top:11%;
 .slider-images a img {
     height: 360px;  
     width: 360px;  
-
+    margin-bottom: 30px;
 }
 .gender{
    
@@ -282,6 +271,9 @@ margin-top:11%;
     text-align: center;
 }
 
+.promises-p img{
+    margin-bottom: 30px;
+}
 .daretodazzlePromises {
     display: block;
     text-align: center;
@@ -480,8 +472,10 @@ margin-top:11%;
 
 .last-icon{
     
-    word-spacing:40px;
-        margin-left:9%;
+    word-spacing:20px;
+    margin-left:9%;
+    width:100%;
+    text-align: centre;
     
 }
 .know-more{
@@ -626,4 +620,120 @@ margin-top:11%;
     background-color:#b0a16e;
   }
   
+  label {
+    margin: 5px 40px 0 10px;
+    font-size: 26px;
+    display: none;
+    width: 26px;
+    float: left;
+}
+#toggle {
+    display: none;
+}
+.middlelogo{
+    display: none;
+}
+@media only screen and (max-width: 1000px){
+    label {
+        display:flex;
+        cursor: pointer;
+        z-index: 9;
+    }
+  .fullheaderr{
+      display: flex;
+      position: fixed;
+      width: 100%;
+      background-color: white;
+      z-index: 2;
+      padding-bottom: 10px;
+  }
+    .middlelogo{
+        display:flex;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 2;
+        margin-top: 10px;
+        padding-left: 70px;
+        
+    }
+   
+ 
+    .header{display: none; justify-content: center; overflow-y:scroll ; z-index: 2;background-color: #b0a16e;}
+    .h-up{display: none; justify-content: center;}
+    .h-down{display: none; justify-content: center;}
+       
+    .h-up-left button{
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 1px solid lightgray;
+    }
+  
+   
+    .h-up-right{
+        position: relative;
+        right: auto;
+        text-align: center;
+        justify-content: center;
+    }
+   
+    .h-up-left{
+        margin-left: 0;
+        margin-top: 70px;
+    }
+    .h-up-right button{
+        
+        display: block;
+        width: 100%;
+        margin-left:0;
+        padding: 0;
+        border: 1px solid lightgray;
+    }
+    .h-down .logo{
+        display: none;
+    }
+    .h-down .h-down-icon{
+        display: none;
+    }
+   
+    .h-down .h-down-btn button{
+        display: block;
+        justify-content:center;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        outline: 1px solid lightgray;
+    }
+    .h-down .h-down-btn{
+        display: block;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+    .carousel-inner {
+        margin-top:70px;
+        }
+.three-text-main-container{
+    display: none;
+}
+#feedback{
+    display: block;
+}
+ .text{
+     bottom: 20%;
+ }
+ .three-text-main-container{
+     display: none;
+ }
+    #toggle:checked + .header,.h-up,.h-down{
+        display: block;
+        padding: 0;
+        
+        
+    }
+  
+ 
+}
 

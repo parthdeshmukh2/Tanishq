@@ -475,10 +475,12 @@ label{
   border-bottom: 1px rgb(231, 228, 228);
 }
 #added_items>div>img{
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
 }
-
+#added_items img{
+    width:30%;
+}
 
 .images>img{
     width:40px;

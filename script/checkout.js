@@ -25,7 +25,12 @@ let firstName=document.getElementById("checkout_firstName")
     let lastname = document.getElementById("checkout_lastName")
     let email=document.getElementById("checkout_email")
     let phone =document.getElementById("checkout_phone")
+    let address=document.getElementById("added_orderDet");
+    let  newDetails = document.getElementById("checkbox_").checked=true;
+   
+
 function append(data){
+
   
     data.map(function (ele){
       if(ele._id == tokenCheck){
@@ -34,11 +39,19 @@ function append(data){
         lastname.value = ele.lastName;
         phone.value = ele.mobileNo;
         email.value = ele.email;
+        if(newDetails){
+          let nameOrder=document.createElement("p").textContent=firstName.value+" ";
+        let details1= document.createElement("p").textContent=email.value+"  ";
+    
+        
+        address.append(nameOrder,details1)
+        }
       }
     })
   
 }
 append()
+
 
 // let url2 = "https://cw4tanishq.herokuapp.com/cart";
    
@@ -90,7 +103,16 @@ async function tocart() {
   } catch (error) {
     console.log(error);
   }
+  localStorage.removeItem("cartItm")
+  localStorage.removeItem("cartLen");
+  localStorage.removeItem("cartID")
+  localStorage.removeItem("CartItems")
 }
+
+
+
+
+
 
 
   //  function checking_out(){
@@ -98,38 +120,29 @@ async function tocart() {
   //   let lastname = document.getElementById("checkout_lastName").value;
   //   let email=document.getElementById("checkout_email").value;
   //   let phone =document.getElementById("checkout_phone").value;
-
+ 
      
-
-  //       let checkoutObj={
-  //           name:firstName,
-  //           lastname:lastName,
-  //           mail:email,
-  //           mobile:phone,
-  //           addr:address,
-  //           ste:state,
-  //           place:city,
-  //           conty:country,
-  //       }
+  //  }
+    //     let checkoutObj={
+            
+            
+    //         addr:address,
+    //         ste:state,
+    //         place:city,
+    //         conty:country,
+    //     }
 
     //       if(firstName,lastName,email,phone,country,zipcode,state,city,addressDe,phone1){
 
 
-    //         let nameP=document.createElement("p");
-    //         nameP.textContent=firstName+" ";
-    //         let mailId=document.createElement("p");
-    //         mailId.textContent=email;
-    //         let mobNum=document.createElement("p");
-    //         mobNum.textContent=phone;
-    //         let addre=document.createElement("p");
-    //         addre.textContent=city+" "+state+" "+zipcode;
-    //         // let couty=document.createElement("p");
+        
+    // //         // let couty=document.createElement("p");
     //         // couty.textContent=country.value;
 
-    //         let cart_items = document.getElementById("added_items");
+    //         // let cart_items = document.getElementById("added_items");
 
 
-    //         let data = JSON.parse(localStorage.getItem("CartItems"))
+    //         // let data = JSON.parse(localStorage.getItem("CartItems"))
 
     //         data.map((ele)=>{
     //             let div = document.createElement("div");
@@ -175,19 +188,76 @@ async function tocart() {
 
 
 
+  
+    // let address=document.getElementById("added_address")
+   
+
+    
+            // let nameP=document.createElement("p");
+            // nameP.textContent=firstName+" ";
+            // let mailId=document.createElement("p");
+            // mailId.textContent=email;
+            // let mobNum=document.createElement("p");
+            // mobNum.textContent=phone;
+            // let addre=document.createElement("p");
+            // addre.textContent=city+" "+state+" "+zipcode;
+            // let couty=document.createElement("p");
+            // couty.textContent=country.value;
+     
+
+   function check_out(){
     let zip=document.getElementById("zipcode").value;
     let state=document.getElementById("stateDel").value;
     let city=document.getElementById("cityDel").value;
-    let addressDe=document.getElementById("addressDel").value;
     let phone1 = document.getElementById("phoneDel").value;
-    let country=document.getElementById("checkout_country").option;
-    let address=document.getElementById("added_address")
-   function check_out(){
+    let country=document.getElementById("checkout_country");
+    let review_items = document.getElementById("added_items")
+    let data= JSON.parse(localStorage.getItem("cartItm"));
+      let data1=data[0].cart;
+        // data1.map(function (ele){
+        //   console.log(ele)
+        // })
+        let array=[];
+        if(zip,city,state,phone1){
+         data1.map(function (ele){
    
-      document.getElementById('order_review').checked = true;
-      document.getElementById('checkout_details').checked = false;
-   }
+     
+     let image = document.createElement("img");
+       image.src=ele.image_link;
+     let category = document.createElement("p");
+       category.textContent="Category: "+ele.category+" - "+"Type: "+ele.type;
+     let price = document.createElement("p");
+     price.textContent="Amount"+"Rs."+ele.price;
+     array.push(ele.price);
 
+     review_items.append(image,category,price);
+   })
+   var sum=0;
+  for(var i =0 ;i<array.length; i++){
+    sum+=array[i];
+  }
+  
+    let totalPrice = document.getElementById("totalAmount").textContent="Rs."+sum;
+      
+   
+      let details3= document.createElement("p").textContent=city+" "+state;
+      let details4= document.createElement("p").textContent=country+" "+zip;
+     address.append(details3,details4)
+     document.getElementById('order_review').checked = true;
+     document.getElementById('checkout_details').checked = false;
+    }
+    else{
+      alert("Enter required details")
+    }
+   
+   
+    
+    
+     
+
+   }
+  
+  //  [{"_id":"624953e65871e52888b854fe","userID":"6246d6813c39f629ab0fe1d8","cart":[{"_id":"62434374cbc0dd7571254c36","id":41,"image_link":"https://staticimg.titan.co.in/Tanishq/Catalog/51F1I2PDGAAA00_1.jpg?impolicy=pqmed&imwidth=640","category":"Men","name":"Grand Stunning locket For Men","price":57080,"rating":"3.7","type":"Gold"},{"_id":"62434374cbc0dd7571254c0e","id":1,"image_link":"https://staticimg.titan.co.in/Tanishq/Catalog/500104SQAABAPL_1.jpg?impolicy=pqmed&imwidth=640","category":"Women","name":"Grand Stunning Earring For Women","price":24080,"rating":"3.9","type":"Gold"},{"_id":"62434374cbc0dd7571254c2d","id":32,"image_link":"https://staticimg.titan.co.in/Tanishq/Catalog/512621PHGAAA00_1.jpg?impolicy=pqmed&imwidth=640","category":"Men","name":"Grand Stunning pendent For Men","price":26080,"rating":"3.5","type":"Gold"}],"__v":10}]
   function continue_payment(){
     document.getElementById('checkbox_payment').checked = true;
 

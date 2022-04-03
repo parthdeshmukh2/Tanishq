@@ -115,10 +115,11 @@
                     <p>If you have reviewed your order, you can proceed to the next stage and make the payment.</p>
 
                     <div style="width: 100%; border:1px solid black; display: flex;">
-                        <div id="added_items">
+                        <div id="added_items" >
                         </div>
                         <div id="added_address">
-                            <h2>TOTAL PRICE AMOUNT:</h2>
+                            <h2>TOTAL PRICE AMOUNT: <p id="totalAmount"></p></h2>
+                            <div id="added_orderDet" style="display: block; width: 80px; height: max-content;"></div>
                         </div>
                     </div>
                     <button onclick="continue_payment()" style="font-size:small;margin-top: 20px; margin-left:150px; padding:10px 20px; border: none; background-color: black; color:white;">CONTINUE TO PAYMENT</button>                

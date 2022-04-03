@@ -1,4 +1,5 @@
 let cartData = JSON.parse(localStorage.getItem("cartItm")) || [];
+console.log(cartData);
 
 let totalD = document.querySelector(".totl");
 
@@ -13,6 +14,7 @@ let mdiv = document.getElementById("cart-mid");
 cartDisplay(cartData, mdiv);
 
 function cartDisplay(data, target) {
+  // console.log(data[0].cart[0]._id);
   displayTotal();
   data[0].cart.map((e) => {
     mdiv.innerHTML += `
@@ -78,22 +80,13 @@ function cartDisplay(data, target) {
     </div>
         
           
-</div>
-   
-        
-        
-        
-        
-        
-        
-        `;
+</div>`;
 
     itmQty();
   });
 }
 
 function itmQty() {
-
   let qty = document.querySelector(".itmQty");
 
   qty.innerHTML = `CART: ${cartData[0].cart.length} ITEM(s)`;
@@ -102,6 +95,29 @@ function itmQty() {
 }
 
 function removeCartItm(id) {
+  // console.log(pr);
+  var uid = localStorage.getItem("_id");
+  var token = localStorage.getItem("token");
+  async function delcartitm() {
+    try {
+      var cartData = {
+        userId: uid,
+        cartId: id,
+      };
+      const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+        method: "DELETE",
+        body: JSON.stringify(cartData),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      // const result = await res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  delcartitm();
   let ndiv = document.querySelector("#cart-mid");
 
   cartData[0].cart = cartData[0].cart.filter((itm) => itm.id != id);
@@ -111,6 +127,8 @@ function removeCartItm(id) {
   localStorage.setItem("CartItems", JSON.stringify(test));
 
   let newCart = JSON.parse(localStorage.getItem("CartItems") || []);
+
+  localStorage.setItem("cartItm", newCart )
 
   updateCart(newCart, ndiv);
 
@@ -223,18 +241,66 @@ function displayTotal() {
   });
 }
 
-var total_cart = localStorage.getItem("cartLen");
-if (total_cart > 0) {
-  document.getElementById("amartocart").innerHTML = `CART(${total_cart})`;
-}
+// var total_cart = localStorage.getItem("cartLen");
+// if (total_cart > 0) {
+//   document.getElementById("amartocart").innerHTML = `CART(${total_cart})`;
+// }
 
 // var usrname = JSON.parse(localStorage.getItem("name"))||[];
 // document.getElementById("amarname").textContent = `${usrname}`;
 
-var userdelet = document.getElementById("gotologin");
+// var userdelet = document.getElementById("gotologin");
 
-userdelet.addEventListener("click", function () {
-  console.log(userdelet);
-  localStorage.removeItem("logInUserdata");
-  localStorage.removeItem("name");
-});
+// userdelet.addEventListener("click", function () {
+//   console.log(userdelet);
+//   localStorage.removeItem("logInUserdata");
+//   localStorage.removeItem("name");
+// });
+
+// var delcart=document.querySelector(".remove")
+
+// {
+
+// }
+
+// var rem = document.querySelector(".remove");
+
+// rem.addEventListener("click", function () {});
+
+var username = localStorage.getItem("name");
+
+if (username === null)
+  document.getElementById("username").innerHTML =
+    "<a style='color:Black;text-decoration:none;'href='./login.html'>Login</a>";
+else document.getElementById("username").innerHTML = `<b>${username}</b>`;
+
+// function removeItm(id) {
+//   var uid = localStorage.getItem("_id");
+//   var token = localStorage.getItem("token");
+//   async function delcartitm() {
+//     try {
+//       if (!localStorage.getItem("name")) {
+//         alert("Please Login to continue");
+//         return;
+//       } else {
+//         var cartData = {
+//           userId: uid,
+//           cartId: e._id,
+//         };
+//         const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+//           method: "DELETE",
+//           body: JSON.stringify(cartData),
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${token}`,
+//           },
+//         });
+//         // const result = await res.json();
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
+//   // delcartitm();
+//   removeItm()
+// }

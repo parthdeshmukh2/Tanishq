@@ -237,9 +237,18 @@ function appendmd(data) {
   });
 }
 
+
+
 var username = localStorage.getItem("name");
 
 if (username === null)
   document.getElementById("username").innerHTML =
     "<a style='color:Black;text-decoration:none;'href='./login.html'>Login</a>";
 else document.getElementById("username").innerHTML = `<b>${username}`;
+
+function logout(){
+  localStorage.removeItem("name");
+  localStorage.removeItem("_id");
+  localStorage.removeItem("token");
+  window.location.href='../index.html';
+}

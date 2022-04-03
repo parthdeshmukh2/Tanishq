@@ -90,8 +90,8 @@ append();
 // _id: "6247b6c10287b756eeb81e33"
 
 async function tocart() {
-  window.location.href='Home.html';
-  alert("Redirecting to Home Page")
+  // window.location.href='Home.html';
+  // alert("Redirecting to Home Page")
   // var _id = localStorage.getItem("_id");
   var cartID = localStorage.getItem("cartID");/////why var was not accessible from outsied of async function//go through back end once again
   try {
@@ -115,7 +115,8 @@ async function tocart() {
   localStorage.removeItem("cartLen");
   localStorage.removeItem("cartID")
   localStorage.removeItem("CartItems")
-
+  window.location.href='Home.html';
+   alert("Redirecting to Home Page")
 }
 tocart();
 
@@ -346,7 +347,7 @@ tocart();
     else{
       alert("Enter required details")
     }
-
+   
    }
   
   

@@ -657,7 +657,7 @@ div > h1 , div > h3{
     }
    
  
-    .header{display: none; justify-content: center; overflow-y:scroll ; z-index: 2;}
+    .header{display: none; justify-content: center; overflow-y:scroll ; z-index: 2; background-color: #b0a16e;}
     .h-up{display: none; justify-content: center;}
     .h-down{display: none; justify-content: center;}
        

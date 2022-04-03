@@ -65,7 +65,8 @@ append()
 var _id = localStorage.getItem("_id");
 var cartID = localStorage.getItem("cartID")  
 async function tocart() {
-  console.log("something")
+  window.location.href='Home.html';
+  alert("Redirecting to Home Page")
   try {
     if (!localStorage.getItem("token")) {
       alert("Please Login to continue");

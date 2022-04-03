@@ -42,7 +42,7 @@
             <button>GOLDEN HARVEST</button>
             <button>BOOK AN APPOINTMENT</button>
             <button>WHISLIST</button>
-            <button onclick="document.location='./cart.html'">CART</button>
+            <button id="sunny" onclick= "atc()" ><a href="./cart.html">cart</a></button>
             <button onclick="logout()">Logout</button>
           </div>
         </div>
@@ -788,7 +788,7 @@ function logout(){
   localStorage.removeItem("name");
   localStorage.removeItem("_id");
   localStorage.removeItem("token");
-  window.location.href='../index.html'
+  window.location.href='../index.html';
 }
 
 var username = localStorage.getItem("name")
@@ -798,3 +798,5 @@ else document.getElementById("username").innerHTML=`<b>${username}</b>`
 
     </script>
 </html>
+<script src="../script/atc.js"></script>
+<!-- <script src="../script/atc.js"></script> -->

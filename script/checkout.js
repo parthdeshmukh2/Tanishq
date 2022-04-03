@@ -18,53 +18,50 @@ myfunction();
 let tokenCheck = localStorage.getItem("_id");
 console.log(tokenCheck);
 
-let checkout_username = document.querySelector(".checkout_username")
-let firstName=document.getElementById("checkout_firstName")
-    let lastname = document.getElementById("checkout_lastName")
-    let email=document.getElementById("checkout_email")
-    let phone =document.getElementById("checkout_phone")
-    // let address=document.getElementById("added_orderDet");
-    let  newDetails = document.getElementById("checkbox_").checked=true;
-   
+let checkout_username = document.querySelector(".checkout_username");
+let firstName = document.getElementById("checkout_firstName");
+let lastname = document.getElementById("checkout_lastName");
+let email = document.getElementById("checkout_email");
+let phone = document.getElementById("checkout_phone");
+// let address=document.getElementById("added_orderDet");
+let newDetails = (document.getElementById("checkbox_").checked = true);
 
-function append(data){
+function append(data) {
+  data.map(function (ele) {
+    if (ele._id == tokenCheck) {
+      checkout_username.textContent = 1 + " " + ele.firstName;
+      firstName.value = ele.firstName;
+      lastname.value = ele.lastName;
+      phone.value = ele.mobileNo;
+      email.value = ele.email;
+      if (newDetails) {
+        let nameOrder = (document.createElement("p").textContent =
+          firstName.value + " ");
+        let details1 = (document.createElement("p").textContent =
+          email.value + "  ");
 
-  
-    data.map(function (ele){
-      if(ele._id == tokenCheck){
-        checkout_username.textContent=1+" "+ele.firstName;
-        firstName.value = ele.firstName;
-        lastname.value = ele.lastName;
-        phone.value = ele.mobileNo;
-        email.value = ele.email;
-        if(newDetails){
-          let nameOrder=document.createElement("p").textContent=firstName.value+" ";
-        let details1= document.createElement("p").textContent=email.value+"  ";
-    
-        
-        address.append(nameOrder,details1)
-        }
+        address.append(nameOrder, details1);
       }
-    })
-  
-// let checkout_username = document.querySelector(".checkout_username");
-// let firstName = document.getElementById("checkout_firstName");
-// let lastname = document.getElementById("checkout_lastName");
-// let email = document.getElementById("checkout_email");
-// let phone = document.getElementById("checkout_phone");
-// function append1(data) {
-//   data.map(function (ele) {
-//     if (ele._id == tokenCheck) {
-//       checkout_username.textContent = 1 + " " + ele.firstName;
-//       firstName.value = ele.firstName;
-//       lastname.value = ele.lastName;
-//       phone.value = ele.mobileNo;
-//       email.value = ele.email;
-//     }
-//   });
+    }
+  });
+
+  // let checkout_username = document.querySelector(".checkout_username");
+  // let firstName = document.getElementById("checkout_firstName");
+  // let lastname = document.getElementById("checkout_lastName");
+  // let email = document.getElementById("checkout_email");
+  // let phone = document.getElementById("checkout_phone");
+  // function append1(data) {
+  //   data.map(function (ele) {
+  //     if (ele._id == tokenCheck) {
+  //       checkout_username.textContent = 1 + " " + ele.firstName;
+  //       firstName.value = ele.firstName;
+  //       lastname.value = ele.lastName;
+  //       phone.value = ele.mobileNo;
+  //       email.value = ele.email;
+  //     }
+  //   });
 }
 append();
-
 
 // let url2 = "https://cw4tanishq.herokuapp.com/cart";
 
@@ -90,14 +87,12 @@ append();
 // _id: "6247b6c10287b756eeb81e33"
 
 async function tocart() {
-  // window.location.href='Home.html';
-  // alert("Redirecting to Home Page")
   // var _id = localStorage.getItem("_id");
-  var cartID = localStorage.getItem("cartID");/////why var was not accessible from outsied of async function//go through back end once again
+  var cartID = localStorage.getItem("cartID"); /////why var was not accessible from outsied of async function//go through back end once again
   try {
     var cartData = {
       cId: cartID,
-    }
+    };
     const token = localStorage.getItem("token");
     const res = await fetch(`https://cw4tanishq.herokuapp.com/cart`, {
       method: "PUT",
@@ -111,10 +106,10 @@ async function tocart() {
   } catch (error) {
     console.log(error);
   }
-  localStorage.removeItem("cartItm")
+  localStorage.removeItem("cartItm");
   localStorage.removeItem("cartLen");
-  localStorage.removeItem("cartID")
-  localStorage.removeItem("CartItems")
+  localStorage.removeItem("cartID");
+  localStorage.removeItem("CartItems");
   window.location.href='Home.html';
    alert("Redirecting to Home Page")
 }
@@ -207,10 +202,27 @@ tocart();
 //   document.getElementById("checkout_details").checked = false;
 // }
 
+//  function checking_out(){
+//   let firstName=document.getElementById("checkout_firstName").value;
+//   let lastname = document.getElementById("checkout_lastName").value;
+//   let email=document.getElementById("checkout_email").value;
+//   let phone =document.getElementById("checkout_phone").value;
 
+//  }
+//     let checkoutObj={
 
+//         addr:address,
+//         ste:state,
+//         place:city,
+//         conty:country,
+//     }
 
+//       if(firstName,lastName,email,phone,country,zipcode,state,city,addressDe,phone1){
 
+// //         // let couty=document.createElement("p");
+//         // couty.textContent=country.value;
+
+//         // let cart_items = document.getElementById("added_items");
 
 
   //  function checking_out(){
@@ -356,25 +368,103 @@ tocart();
  
  
  
-   function continue_payment(){
-
-    document.getElementById('checkbox_payment').checked = true;
+//   function continue_payment(){
 
 
+//     let amount = document.createElement("h4");
+//     amount.textContent="Rs."+total;
+//     let addHead = document.createElement("h2");
+//     addHead.textContent="DELIVERY ADDRESS:";
 
-     document.getElementById('order_review').checked = false;
-        
-   }
+//         let address_div = document.getElementById("added_address");
+//         address_div.append(amount,addHead,nameP,mailId,mobNum,addre)
 
-   function pay_order(){
-     window.location.href="payment.html";
-   }
+//         document.getElementById('order_review').checked = true;
+//         localStorage.setItem("checkout_details",JSON.stringify(checkoutObj))
+//         document.getElementById('checkout_details').checked = false;
 
+//       }
+//       else{
+//           alert("enter all the required details");
+//       }
+// }
+// document.getElementById('order_review').checked = false;
 
-function creditCard(){
-  document.getElementById('credit_details').checked = true;
-  document.getElementById('netbanking').checked = false;
-  document.getElementById('wallet').checked = false;
+// let address=document.getElementById("added_address")
+
+// let nameP=document.createElement("p");
+// nameP.textContent=firstName+" ";
+// let mailId=document.createElement("p");
+// mailId.textContent=email;
+// let mobNum=document.createElement("p");
+// mobNum.textContent=phone;
+// let addre=document.createElement("p");
+// addre.textContent=city+" "+state+" "+zipcode;
+// let couty=document.createElement("p");
+// couty.textContent=country.value;
+
+function check_out() {
+  let zip = document.getElementById("zipcode").value;
+  let state = document.getElementById("stateDel").value;
+  let city = document.getElementById("cityDel").value;
+  let phone1 = document.getElementById("phoneDel").value;
+  let country = document.getElementById("checkout_country");
+  let review_items = document.getElementById("added_items");
+  let data = JSON.parse(localStorage.getItem("cartItm"));
+  let data1 = data[0].cart;
+  // data1.map(function (ele){
+  //   console.log(ele)
+  // })
+  let array = [];
+  if ((zip, city, state, phone1)) {
+    data1.map(function (ele) {
+      let image = document.createElement("img");
+      image.src = ele.image_link;
+      let category = document.createElement("p");
+      category.textContent =
+        "Category: " + ele.category + " - " + "Type: " + ele.type;
+      let price = document.createElement("p");
+      price.textContent = "Amount" + "Rs." + ele.price;
+      array.push(ele.price);
+
+      review_items.append(image, category, price);
+    });
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+
+    let totalPrice = (document.getElementById("totalAmount").textContent =
+      "Rs." + sum);
+
+    let details3 = (document.createElement("p").textContent =
+      city + " " + state);
+    let details4 = (document.createElement("p").textContent =
+      country + " " + zip);
+    address.append(details3, details4);
+    document.getElementById("order_review").checked = true;
+    document.getElementById("checkout_details").checked = false;
+  } else {
+    alert("Enter required details");
+  }
+}
+
+//  [{"_id":"624953e65871e52888b854fe","userID":"6246d6813c39f629ab0fe1d8","cart":[{"_id":"62434374cbc0dd7571254c36","id":41,"image_link":"https://staticimg.titan.co.in/Tanishq/Catalog/51F1I2PDGAAA00_1.jpg?impolicy=pqmed&imwidth=640","category":"Men","name":"Grand Stunning locket For Men","price":57080,"rating":"3.7","type":"Gold"},{"_id":"62434374cbc0dd7571254c0e","id":1,"image_link":"https://staticimg.titan.co.in/Tanishq/Catalog/500104SQAABAPL_1.jpg?impolicy=pqmed&imwidth=640","category":"Women","name":"Grand Stunning Earring For Women","price":24080,"rating":"3.9","type":"Gold"},{"_id":"62434374cbc0dd7571254c2d","id":32,"image_link":"https://staticimg.titan.co.in/Tanishq/Catalog/512621PHGAAA00_1.jpg?impolicy=pqmed&imwidth=640","category":"Men","name":"Grand Stunning pendent For Men","price":26080,"rating":"3.5","type":"Gold"}],"__v":10}]
+
+function continue_payment() {
+  document.getElementById("checkbox_payment").checked = true;
+
+  document.getElementById("order_review").checked = false;
+}
+
+function pay_order() {
+  window.location.href = "payment.html";
+}
+
+function creditCard() {
+  document.getElementById("credit_details").checked = true;
+  document.getElementById("netbanking").checked = false;
+  document.getElementById("wallet").checked = false;
   document.getElementById("order_review").checked = false;
 }
 
@@ -428,7 +518,3 @@ function otpPage() {
 // function tohome() {
 //   window.location.href = "Home.html";
 // }
-
-
-
-

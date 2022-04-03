@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display';
+    
+    
+}
+
+
+.fullheader{
+    background-color:rgb(255, 255, 255);
+    overflow-x: hidden;
+    
+    
+}
+.header{
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.h-up {
+    display: flex;
+    flex-direction: column;
+    
+    padding-top: 0.5%;
+    padding-bottom: 0%;
+
+}
+
+.h-up-left button , .h-up-right button, .h-down-btn button{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    
+    letter-spacing: 0.5px;
+    word-spacing: 0;
+    margin-left: 1.8rem;
+    cursor: pointer;
+    font-family: 'Inconsolata', monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.h-up-left{
+    margin-left: 2rem;
+}
+
+.h-up-right{
+    
+    right: 3rem;
+    position: absolute;
+}
+
+.h-down .logo{
+    margin-left: 1.7rem;
+    margin-top: 0.1rem;
+    margin-bottom: 1.5%;
+    margin-right: 6%;
+}
+
+.h-down{
+    display: flex;
+}
+
+.h-down-btn{
+    margin-top:0.9rem;
+    margin-left: 1rem;
+}
+
+.h-down-btn button{
+    
+    margin-left: 1rem;
+    letter-spacing: 2px;
+    justify-content: space-evenly;
+
+}
+
+.h-down-icon{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.h-down-icon i{
+    font-size: 25px;
+    margin-left: 2rem;
+    
+    cursor: pointer;
+}
+
+.photo{
+    margin-top: 1rem;
+}
+
+.photo img{
+    width: 100%;
+    height:fit-content;
+}
+.dropbtn {
+    background-color: #ffffff;
+    color: black;
+    font-size: 16px;
+    border: none;
+
+  }
+  
+
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:white;
+    z-index: 1;
+  width: 100%;
+  left: 0;
+  margin-top:2%;;
+  border-top: 1px solid rgb(202, 201, 201);
+  justify-content: space-evenly;
+
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+    
+  }
+  .dropdown-content h3{
+      margin-top: 2rem;
+  }
+  
+  .dropdown-content a:hover {
+      color: black;
+      font-weight: bolder;
+     width: 100%;
+
+    }
+  
+  .h-down-btn:hover .dropdown-content {
+      display: flex;
+      width:100%;
+      font-weight: 600px;
+      text-align: left;
+
+    }
+  
+  .h-down-btn:hover .dropbtn {
+      background-color: white;
+    }

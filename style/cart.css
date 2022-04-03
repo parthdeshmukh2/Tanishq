@@ -145,7 +145,7 @@ input::-webkit-inner-spin-button {
 }
 
 #con-right{
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     /* border: 1px solid red; */
     width: 450px;

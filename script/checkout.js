@@ -62,18 +62,23 @@ append()
 // userID: "6246d6813c39f629ab0fe1d8"
 // __v: 13
 // _id: "6247b6c10287b756eeb81e33"
-let userId = req.parms._id
-let cart = cart.id
+var _id = localStorage.getItem("_id");
+var cartID = localStorage.getItem("cartID")  
 async function tocart() {
+  console.log("something")
   try {
     if (!localStorage.getItem("token")) {
       alert("Please Login to continue");
       return;
     } else {
+      var cartData = {
+        userId: _id,
+        cId:cartID,
+      };
       const token = (localStorage.getItem("token"));
-      const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+      const res = await fetch(`https://cw4tanishq.herokuapp.com/cart`, {
         method: "PUT",
-        body: [],
+        body:JSON.stringify(cartData) ,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

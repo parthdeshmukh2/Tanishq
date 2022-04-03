@@ -128,7 +128,7 @@ function removeCartItm(id) {
 
   let newCart = JSON.parse(localStorage.getItem("CartItems") || []);
 
-  localStorage.setItem("cartItm", newCart )
+  localStorage.setItem("cartItm", JSON.stringify(newCart) )
 
   updateCart(newCart, ndiv);
 

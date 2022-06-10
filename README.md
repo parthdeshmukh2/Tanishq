@@ -21,7 +21,9 @@ Tech Stack :-
 
 Pages & Features 👇
 •	Landing Page: Navbars, categories and footer section.
+
 •	Sign-Up Page: User details stored to Database.
+
 •	Sign-In Page: User confirmation to check whether user email and password match with details existing in the database.
 •	Product Page: when user sign in with their respective email id's and page it will ridirect to products page where user can select or add to cart for further process.
 •	Cart Page: User can add products to this page or remove products added in the cart.

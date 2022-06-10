@@ -45,6 +45,7 @@ Pages & Features 👇
 •	Additional Features : Kept the branding, fonts, colors,styling and favicon and titles consistent throughtout the whole website to tried building atleast mvp of site .Not exact but tried building same features as in original site.
 
 How To Use ✅
+
 •	At First user has to click on login on landing page. User have to signup if he does not have an account. In signup page user has to fill all the fields in the form.
 
 •	After signup user has to login with same details, otherwise it will show invalid credentials.After login user will be redirected to home page.

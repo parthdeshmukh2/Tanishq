@@ -6,7 +6,7 @@ let arr = [];
 btn.addEventListener("click", function () {
   async function atc() {
     try {
-      let res = await fetch(`https://cw4tanishq.herokuapp.com/cart/${id}`, {
+      let res = await fetch(`https://tanishq.onrender.com/cart/${id}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -22,7 +22,7 @@ btn.addEventListener("click", function () {
     }
     // console.log("here");
     // try {
-    //   // const res = await fetch(`https://cw4tanishq.herokuapp.com/cart/${id}`,{
+    //   // const res = await fetch(`https://tanishq.onrender.com/cart/${id}`,{
     //   //   method:"GET",
     // headers:{
     //   Authorization: `Bearer ${token}`

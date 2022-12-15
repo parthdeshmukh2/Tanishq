@@ -22,7 +22,7 @@ let userData = {
 
 const newUser= JSON.stringify(userData)
 
-    const res = await fetch("https://cw4tanishq.herokuapp.com/login",{
+    const res = await fetch("https://tanishq.onrender.com/login",{
         method:"POST",
         body:newUser,
         headers:{

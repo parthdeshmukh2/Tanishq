@@ -1,6 +1,6 @@
 let userName = JSON.parse(localStorage.getItem("logInUserdata"));
 
-let url = "https://cw4tanishq.herokuapp.com/user";
+let url = "https://tanishq.onrender.com/user";
 async function myfunction() {
   try {
     let res = await fetch(url);
@@ -63,7 +63,7 @@ function append(data) {
 }
 append();
 
-// let url2 = "https://cw4tanishq.herokuapp.com/cart";
+// let url2 = "https://tanishq.onrender.com/cart";
 
 // async function myfunction2() {
 //   try {
@@ -94,7 +94,7 @@ async function tocart() {
       cId: cartID,
     };
     const token = localStorage.getItem("token");
-    const res = await fetch(`https://cw4tanishq.herokuapp.com/cart`, {
+    const res = await fetch(`https://tanishq.onrender.com/cart`, {
       method: "PUT",
       body: JSON.stringify(cartData),
       headers: {

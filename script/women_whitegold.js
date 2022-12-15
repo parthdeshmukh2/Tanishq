@@ -115,7 +115,7 @@
 // // });
 // ///////////////////////////////////////
 
-// let url = "https://cw4tanishq.herokuapp.com/product?type=White Gold&category=Women";
+// let url = "https://tanishq.onrender.com/product?type=White Gold&category=Women";
 // async function myfunction() {
 //   try {
 //     let res = await fetch(url);
@@ -186,7 +186,7 @@
 // }
 
 let url =
-  "https://cw4tanishq.herokuapp.com/product?type=white Gold&category=Women";
+  "https://tanishq.onrender.com/product?type=white Gold&category=Women";
 async function myfunction(url) {
   try {
     let res = await fetch(url);
@@ -255,7 +255,7 @@ function appendmd(data) {
               userId: _id,
               cartItem: item,
             };
-            const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+            const res = await fetch("https://tanishq.onrender.com/cart", {
               method: "POST",
               body: JSON.stringify(cartData),
               headers: {

@@ -104,7 +104,7 @@ function removeCartItm(id) {
         userId: uid,
         cartId: id,
       };
-      const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+      const res = await fetch("https://tanishq.onrender.com/cart", {
         method: "DELETE",
         body: JSON.stringify(cartData),
         headers: {
@@ -287,7 +287,7 @@ else document.getElementById("username").innerHTML = `<b>${username}</b>`;
 //           userId: uid,
 //           cartId: e._id,
 //         };
-//         const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+//         const res = await fetch("https://tanishq.onrender.com/cart", {
 //           method: "DELETE",
 //           body: JSON.stringify(cartData),
 //           headers: {

@@ -31,7 +31,7 @@
 // }
 
 // api fetch
-//  const url = "https://cw4tanishq.herokuapp.com/products?type=Diamond&category=Men"
+//  const url = "https://tanishq.onrender.com/products?type=Diamond&category=Men"
 
 // const asyncFunction = ()=>{
 //   try {
@@ -145,7 +145,7 @@
 // });
 //////////////////////////////////////////////////////////////////////////////////
 
-let url = "https://cw4tanishq.herokuapp.com/product?type=Diamond&category=Men";
+let url = "https://tanishq.onrender.com/product?type=Diamond&category=Men";
 async function myfunction() {
   try {
     let res = await fetch(url);
@@ -214,7 +214,7 @@ function appendmd(data) {
               userId: _id,
               cartItem: item,
             };
-            const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+            const res = await fetch("https://tanishq.onrender.com/cart", {
               method: "POST",
               body: JSON.stringify(cartData),
               headers: {

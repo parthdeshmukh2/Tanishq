@@ -115,7 +115,7 @@
 // });
 ////////////////////////////////////////////
 
-let url = "https://cw4tanishq.herokuapp.com/product?type=Gold&category=Women";
+let url = "https://tanishq.onrender.com/product?type=Gold&category=Women";
 async function myfunction() {
   try {
     let res = await fetch(url);
@@ -184,7 +184,7 @@ function appendmd(data) {
               userId: _id,
               cartItem: item,
             };
-            const res = await fetch("https://cw4tanishq.herokuapp.com/cart", {
+            const res = await fetch("https://tanishq.onrender.com/cart", {
               method: "POST",
               body: JSON.stringify(cartData),
               headers: {

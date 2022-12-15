@@ -21,7 +21,7 @@ document.querySelector("form").addEventListener("submit", formSubmit);
 
             const newUser= JSON.stringify(userData)
 
-                const res = await fetch("https://cw4tanishq.herokuapp.com/register",{
+                const res = await fetch("https://tanishq.onrender.com/register",{
                     method:"POST",
                     body:newUser,
                     headers:{
